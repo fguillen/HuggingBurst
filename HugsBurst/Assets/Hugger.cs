@@ -9,6 +9,7 @@ public class Hugger : MonoBehaviour
     public float secondsBetweenHuggingDecission;
     public float lastTimeHuggingDecission;
     public float speed;
+    public float speedNoise;
     private GameObject player;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class Hugger : MonoBehaviour
         anim = GetComponent<Animator>();
         lastTimeHuggingDecission = Time.time;
         player = GameObject.Find("Player");
+        speed = speed + Random.Range(-speedNoise, speedNoise);
     }
 
     // Update is called once per frame
