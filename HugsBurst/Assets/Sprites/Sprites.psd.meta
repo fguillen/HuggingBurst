@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c9f8986c185a4d35bab9b8034108088
+guid: 0219ef30577bb4e5faaf9992a20655d1
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,8 +134,8 @@ TextureImporter:
         serializedVersion: 2
         x: 2
         y: 421
-        width: 89
-        height: 155
+        width: 90
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,9 +153,9 @@ TextureImporter:
       name: Sprites_1
       rect:
         serializedVersion: 2
-        x: 109
-        y: 423
-        width: 86
+        x: 114
+        y: 424
+        width: 81
         height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f4dcfd94fc2084912b9566b5034a40bd
     internalID: 0
     vertices: []
     indices: 
@@ -182,7 +182,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

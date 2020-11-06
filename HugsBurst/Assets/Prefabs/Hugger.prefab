@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049910530314331369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2260098688934121348}
   - component: {fileID: 1121554751}
   - component: {fileID: 1121554752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hugger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,8 +105,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4994761851749676447}
   - component: {fileID: 4946391870518579665}
-  m_Layer: 0
-  m_Name: Sprites_0
+  m_Layer: 8
+  m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924357747667674251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1049910530314331369}
@@ -162,16 +162,16 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 259828769
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4773600122041589604, guid: 4c9f8986c185a4d35bab9b8034108088,
+  m_Sprite: {fileID: 4773600122041589604, guid: 0219ef30577bb4e5faaf9992a20655d1,
     type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.89, y: 1.55}
+  m_Size: {x: 0.9, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -187,8 +187,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3622823341029537890}
   - component: {fileID: 4394225655893820213}
-  m_Layer: 0
-  m_Name: Sprites_1
+  m_Layer: 8
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,16 +244,16 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 259828769
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4789670105439411607, guid: 4c9f8986c185a4d35bab9b8034108088,
+  m_Sprite: {fileID: -4789670105439411607, guid: 0219ef30577bb4e5faaf9992a20655d1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.86, y: 1.51}
+  m_Size: {x: 0.81, y: 1.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
