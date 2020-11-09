@@ -29,6 +29,8 @@ public class Hugger : MonoBehaviour
         hugging = false;
         enoughHugging = false;
 
+        huggingBody.SetActive(false);
+
         anim = GetComponent<Animator>();
         // lastTimeHuggingDecission = Time.time;
         // player = GameObject.Find("Player");
@@ -71,6 +73,8 @@ public class Hugger : MonoBehaviour
 
       idleBody.SetActive(false);
       huggingBody.SetActive(true);
+
+      transform.localScale = huggingPoint.transform.localScale; // flip the object if needed
 
       anim.SetBool("WantsToHug", false);
       anim.SetBool("Hugging", true);
