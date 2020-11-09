@@ -36,6 +36,6 @@ public class LevelManager : MonoBehaviour
       var x = Random.Range(limitWest.position.x, limitEast.position.x);
       var z = Random.Range(limitNorth.position.z, limitSouth.position.z);
 
-      Instantiate(huggerTemplate, new Vector3(x, 1, z), huggerTemplate.transform.rotation);
+      Instantiate(huggerTemplate, new Vector3(x, 2, z), huggerTemplate.transform.rotation);
     }
 }
