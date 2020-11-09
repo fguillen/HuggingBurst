@@ -40,9 +40,13 @@ public class HuggingPoint : MonoBehaviour
 
       foreach(var hugger in nearHuggers){
         print("Checking Hugger");
-        if(Random.Range(0, 10000 - radarPower) == 0) {
-          selectedHugger = hugger.GetComponent<Hugger>();
-          break;
+        Hugger huggerScript = hugger.GetComponent<Hugger>();
+
+        if(huggerScript.IsIdle()) { // only if is idle now
+          if(Random.Range(0, 10000 - radarPower) == 0) {
+            selectedHugger = huggerScript;
+            break;
+          }
         }
       }
 
@@ -52,7 +56,7 @@ public class HuggingPoint : MonoBehaviour
     void OnDrawGizmos()
     {
       // print("Drawing Gizmos: " + transform.position + " -- " + attractionDistance);
-      // Gizmos.color = Color.yellow;
-      // Gizmos.DrawSphere(transform.position, attractionDistance);
+      Gizmos.color = Color.yellow;
+      Gizmos.DrawSphere(transform.position, attractionDistance);
     }
 }

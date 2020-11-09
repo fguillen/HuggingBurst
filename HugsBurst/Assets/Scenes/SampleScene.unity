@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   huggerTemplate: {fileID: 787912531035816559, guid: a63a07119501f435983717644db7d2f1,
     type: 3}
-  numOfHuggers: 300
+  numOfHuggers: 10
   limitNorth: {fileID: 474136845}
   limitSouth: {fileID: 256985154}
   limitEast: {fileID: 985323757}
@@ -878,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 4420751413628181683, guid: 21c233f6145364e59a4d19fa0ac7cddd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47699976
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 4420751413628181683, guid: 21c233f6145364e59a4d19fa0ac7cddd,
         type: 3}
@@ -888,7 +888,7 @@ PrefabInstance:
     - target: {fileID: 4420751413628181683, guid: 21c233f6145364e59a4d19fa0ac7cddd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4420751413628181683, guid: 21c233f6145364e59a4d19fa0ac7cddd,
         type: 3}
@@ -1409,12 +1409,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HuggingPointEast
       objectReference: {fileID: 0}
-    - target: {fileID: 4498966684817582458, guid: 21c233f6145364e59a4d19fa0ac7cddd,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c233f6145364e59a4d19fa0ac7cddd, type: 3}
 --- !u!4 &9175451043458013438 stripped

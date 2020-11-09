@@ -47,4 +47,4 @@ MonoBehaviour:
   huggersLayer:
     serializedVersion: 2
     m_Bits: 512
-  radarPower: 0
+  radarPower: 1000

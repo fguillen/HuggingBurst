@@ -130,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   speedNoise: 0.1
+  idleBody: {fileID: 4078643403488100561}
+  huggingBody: {fileID: 6598200893172496954}
 --- !u!1 &4078643403488100561
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +143,7 @@ GameObject:
   - component: {fileID: 3622823341029537890}
   - component: {fileID: 4394225655893820213}
   m_Layer: 9
-  m_Name: Body
+  m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
