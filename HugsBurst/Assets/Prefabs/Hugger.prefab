@@ -628,6 +628,8 @@ MonoBehaviour:
   huggingBody: {fileID: 6598200893172496954}
   secondsHugging: 5
   hugStartedAt: 0
+  secondsBetweenHugs: 10
+  lastHugFinishedAt: 0
 --- !u!1 &4078643403488100561
 GameObject:
   m_ObjectHideFlags: 0
