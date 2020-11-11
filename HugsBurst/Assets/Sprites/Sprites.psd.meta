@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 7061801754131594114
     second: Sprites_2
+  - first:
+      213: -7377819553374844296
+    second: Sprites_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1305,6 +1308,27 @@ TextureImporter:
         boneIndex[1]: 0
         boneIndex[2]: 0
         boneIndex[3]: 0
+    - serializedVersion: 2
+      name: Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 149
+        width: 89
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a4920a438bc9990800000000000000
+      internalID: -7377819553374844296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

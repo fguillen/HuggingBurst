@@ -31,6 +31,10 @@ public class Hugger : MonoBehaviour
     public float walkingPointDistance;
     public Vector3 walkingPoint;
 
+    public GameObject loveParticlesPrefab;
+    private GameObject loveParticles;
+    public GameObject headPoint; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -135,6 +139,7 @@ public class Hugger : MonoBehaviour
       lastHugFinishedAt = Time.time;
 
       huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
+      Destroy(loveParticles);
 
       WalkTowardsRandomPoint();
     }
@@ -208,6 +213,11 @@ public class Hugger : MonoBehaviour
       huggingPoint = _huggingPoint;
 
       anim.SetBool("Walking", true);
+
+      // Love Particles
+      Vector3 position = headPoint.transform.position;
+      position.y = position.y + 0.1f;
+      loveParticles = Instantiate(loveParticlesPrefab, position, Quaternion.identity, headPoint.transform);
     }
 
     public bool IsIdle(){
