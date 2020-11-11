@@ -9,7 +9,7 @@ public class HuggingPoint : MonoBehaviour
 
     public float attractionDistance;
     public LayerMask huggersLayer;
-    public int radarPower; // maximum 1000
+    public int radarPower; // maximum 100
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class HuggingPoint : MonoBehaviour
         Hugger huggerScript = hugger.GetComponent<Hugger>();
 
         if(huggerScript.IsIdle()) { // only if is idle now
-          var random = Random.Range(0, 1000 - radarPower);
+          var random = Random.Range(0, 100 - radarPower);
           print("Random: " + random);
           if(random == 0) {
             selectedHugger = huggerScript;
@@ -53,6 +53,11 @@ public class HuggingPoint : MonoBehaviour
       }
 
       return selectedHugger;
+    }
+
+    public void LiberateHuggingPoint(){
+      taken = false;
+      hugger = null;
     }
 
     // void OnDrawGizmos()

@@ -21,6 +21,9 @@ public class Hugger : MonoBehaviour
     public GameObject idleBody;
     public GameObject huggingBody;
 
+    public float secondsHugging;
+    public float hugStartedAt; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,11 +63,34 @@ public class Hugger : MonoBehaviour
       {
         WalkTowardsHuggingPoint();
       }
+
+      if(hugging){
+        if((Time.time - hugStartedAt) > secondsHugging) {
+          StopHugging();
+        }
+      }
+    }
+
+    void StopHugging(){
+      idle = true;
+      wantsToHug = false;
+      hugging = false;
+      enoughHugging = false;
+
+      idleBody.SetActive(true);
+      huggingBody.SetActive(false);
+
+      anim.SetBool("WantsToHug", false);
+      anim.SetBool("Hugging", false);
+
+      huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
     }
 
     void Hugging()
     {
       print("Hugging");
+
+      hugStartedAt = Time.time;
 
       idle = false;
       wantsToHug = false;
