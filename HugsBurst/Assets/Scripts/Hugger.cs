@@ -78,9 +78,7 @@ public class Hugger : MonoBehaviour
       }
 
       if(hugging){
-        if(RemainingTimeHugging() == 0) {
-          StopHugging();
-        }
+        Hugging();
       }
 
       if(enoughHugging){
@@ -141,9 +139,17 @@ public class Hugger : MonoBehaviour
       WalkTowardsRandomPoint();
     }
 
-    void Hugging()
+    void Hugging(){
+      transform.position = huggingPoint.transform.position;
+
+      if(RemainingTimeHugging() == 0) {
+        StopHugging();
+      }
+    }
+
+    void StartHugging()
     {
-      print("Hugging");
+      print("StartHugging");
 
       hugStartedAt = Time.time;
 
@@ -165,7 +171,7 @@ public class Hugger : MonoBehaviour
       transform.position = Vector3.MoveTowards(transform.position, huggingPoint.transform.position, speed * Time.deltaTime);
 
       if(transform.position == huggingPoint.transform.position){
-        Hugging();
+        StartHugging();
       }
     }
 
