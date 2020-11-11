@@ -8,6 +8,7 @@ public class Hugger : MonoBehaviour
     bool wantsToHug;
     bool hugging;
     bool enoughHugging;
+    bool walkingTowardsPoint;
 
     Animator anim;
     // public float secondsBetweenHuggingDecission;
@@ -27,6 +28,9 @@ public class Hugger : MonoBehaviour
     public float secondsBetweenHugs;
     public float lastHugFinishedAt; 
 
+    public float walkingPointDistance;
+    public Vector3 walkingPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,7 @@ public class Hugger : MonoBehaviour
         wantsToHug = false;
         hugging = false;
         enoughHugging = false;
+        walkingTowardsPoint = false;
 
         huggingBody.SetActive(false);
 
@@ -67,6 +72,11 @@ public class Hugger : MonoBehaviour
         WalkTowardsHuggingPoint();
       }
 
+      if(walkingTowardsPoint)
+      {
+        WalkTowardsPoint();
+      }
+
       if(hugging){
         if(RemainingTimeHugging() == 0) {
           StopHugging();
@@ -78,6 +88,28 @@ public class Hugger : MonoBehaviour
           Idle();
         }
       }
+
+      if(idle) {
+        if(Random.Range(0, 100) == 0){
+          WalkTowardsRandomPoint();
+        }
+      }
+    }
+
+    void WalkTowardsRandomPoint(){
+      idle = false;
+      wantsToHug = false;
+      hugging = false;
+      enoughHugging = false;
+      walkingTowardsPoint = true;
+
+      Vector2 direction = Random.insideUnitCircle.normalized;
+      float distance = Random.Range(0, walkingPointDistance);
+      walkingPoint = new Vector3(transform.localPosition.x * direction.x * distance, transform.localPosition.y, transform.localPosition.z * direction.y * distance);
+
+      print("direction: " + direction);
+      print("distance: " + distance);
+      print("Walking Point: " + walkingPoint);
     }
 
     void Idle(){
@@ -85,6 +117,7 @@ public class Hugger : MonoBehaviour
       wantsToHug = false;
       hugging = false;
       enoughHugging = false;
+      walkingTowardsPoint = false;
 
       idleBody.SetActive(true);
       huggingBody.SetActive(false);
@@ -100,6 +133,7 @@ public class Hugger : MonoBehaviour
       wantsToHug = false;
       hugging = false;
       enoughHugging = true;
+      walkingTowardsPoint = false;
 
       idleBody.SetActive(true);
       huggingBody.SetActive(false);
@@ -108,6 +142,8 @@ public class Hugger : MonoBehaviour
       anim.SetBool("Hugging", false);
 
       huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
+
+      WalkTowardsRandomPoint();
     }
 
     void Hugging()
@@ -138,6 +174,14 @@ public class Hugger : MonoBehaviour
       }
     }
 
+    void WalkTowardsPoint(){
+      transform.position = Vector3.MoveTowards(transform.position, walkingPoint, speed * Time.deltaTime);
+
+      if(transform.position == walkingPoint){
+        Idle();
+      }
+    }
+
     public float RemainingTimeHugging(){
       float result = secondsHugging - (Time.time - hugStartedAt) ;
       if(result < 0) result = 0;
@@ -158,6 +202,7 @@ public class Hugger : MonoBehaviour
       wantsToHug = true;
       hugging = false;
       enoughHugging = false;
+      walkingTowardsPoint = false;
 
       huggingPoint = _huggingPoint;
 
@@ -180,5 +225,12 @@ public class Hugger : MonoBehaviour
       position = transform.position;
       position.y = position.y - 2.2f;
       Gizmos.DrawCube(position, new Vector3(RemainingTimeEnoughHugging(), 0.1f, 0.1f));
+
+      // WalkingPoint
+      if(walkingTowardsPoint) {
+        Gizmos.color = new Color(0, 1, 0, 0.5f);
+        Gizmos.DrawSphere(walkingPoint, 0.1f);
+        Gizmos.DrawLine(transform.position, walkingPoint);
+      }
     }
 }

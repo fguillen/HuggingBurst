@@ -33,18 +33,14 @@ public class HuggingPoint : MonoBehaviour
     }
 
     Hugger FindAvailableHugger(){
-      print("FindAvailableHugger");
-
       Collider[] nearHuggers = Physics.OverlapSphere(transform.position, attractionDistance, huggersLayer);
       Hugger selectedHugger = null;
 
       foreach(var hugger in nearHuggers){
-        print("Checking Hugger");
         Hugger huggerScript = hugger.GetComponent<Hugger>();
 
         if(huggerScript.IsIdle()) { // only if is idle now
           var random = Random.Range(0, 100 - radarPower);
-          print("Random: " + random);
           if(random == 0) {
             selectedHugger = huggerScript;
             break;
