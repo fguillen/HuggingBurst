@@ -103,11 +103,18 @@ public class Hugger : MonoBehaviour
       enoughHugging = false;
       walkingTowardsPoint = true;
 
-      Vector2 direction = Random.insideUnitCircle.normalized;
-      float distance = Random.Range(0, walkingPointDistance);
-      walkingPoint = new Vector3(transform.localPosition.x * direction.x * distance, transform.localPosition.y, transform.localPosition.z * direction.y * distance);
+      idleBody.SetActive(true);
+      huggingBody.SetActive(false);
 
-      print("direction: " + direction);
+      anim.SetBool("Walking", true);
+      anim.SetBool("Hugging", false);
+
+      Vector2 randomDirection = Random.insideUnitCircle.normalized;
+      float distance = Random.Range(0, walkingPointDistance);
+      walkingPoint = new Vector3(transform.position.x + (randomDirection.x * distance), transform.position.y, transform.position.z + (randomDirection.y * distance));
+
+      print("transform.position: " + transform.position);
+      print("randomDirection: " + randomDirection);
       print("distance: " + distance);
       print("Walking Point: " + walkingPoint);
     }
@@ -122,24 +129,12 @@ public class Hugger : MonoBehaviour
       idleBody.SetActive(true);
       huggingBody.SetActive(false);
 
-      anim.SetBool("WantsToHug", false);
+      anim.SetBool("Walking", false);
       anim.SetBool("Hugging", false);
     }
 
     void StopHugging(){
       lastHugFinishedAt = Time.time;
-
-      idle = false;
-      wantsToHug = false;
-      hugging = false;
-      enoughHugging = true;
-      walkingTowardsPoint = false;
-
-      idleBody.SetActive(true);
-      huggingBody.SetActive(false);
-
-      anim.SetBool("WantsToHug", false);
-      anim.SetBool("Hugging", false);
 
       huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
 
@@ -162,7 +157,7 @@ public class Hugger : MonoBehaviour
 
       transform.localScale = huggingPoint.transform.localScale; // flip the object if needed
 
-      anim.SetBool("WantsToHug", false);
+      anim.SetBool("Walking", false);
       anim.SetBool("Hugging", true);
     }
 
@@ -206,7 +201,7 @@ public class Hugger : MonoBehaviour
 
       huggingPoint = _huggingPoint;
 
-      anim.SetBool("WantsToHug", true);
+      anim.SetBool("Walking", true);
     }
 
     public bool IsIdle(){

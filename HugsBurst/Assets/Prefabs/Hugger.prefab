@@ -630,7 +630,7 @@ MonoBehaviour:
   hugStartedAt: 0
   secondsBetweenHugs: 10
   lastHugFinishedAt: 0
-  walkingPointDistance: 3
+  walkingPointDistance: 5
   walkingPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &4078643403488100561
 GameObject:
