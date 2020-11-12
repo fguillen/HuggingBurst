@@ -18,7 +18,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 39.4
+    value: 46
   intensityX:
     overrideState: 0
     value: 0.82
@@ -32,7 +32,7 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   scale:
-    overrideState: 0
+    overrideState: 1
     value: 1.15
 --- !u!114 &11400000
 MonoBehaviour:
@@ -78,7 +78,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.415
+    value: 0.381
   smoothness:
     overrideState: 1
     value: 0.289
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.593
+    value: 0.233
   size:
     overrideState: 1
     value: 1.95
