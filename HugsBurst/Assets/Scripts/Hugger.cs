@@ -10,6 +10,8 @@ public class Hugger : MonoBehaviour
     bool enoughHugging;
     bool walkingTowardsPoint;
 
+    public List<GameObject> hats;
+
     Animator anim;
     // public float secondsBetweenHuggingDecission;
     // public float lastTimeHuggingDecission;
@@ -50,6 +52,8 @@ public class Hugger : MonoBehaviour
         // lastTimeHuggingDecission = Time.time;
         // player = GameObject.Find("Player");
         speed = speed + Random.Range(-speedNoise, speedNoise);
+
+        SetRandomHat();
     }
 
     // Update is called once per frame
@@ -96,6 +100,17 @@ public class Hugger : MonoBehaviour
           WalkTowardsRandomPoint();
         }
       }
+    }
+
+    void SetRandomHat(){
+      // Deactivate all Hats
+      foreach (GameObject hat in hats){
+        hat.SetActive(false);
+      }
+
+      // Activate random one
+      int index = Random.Range(0, hats.Count);
+      hats[index].SetActive(true);
     }
 
     void WalkTowardsRandomPoint(){
