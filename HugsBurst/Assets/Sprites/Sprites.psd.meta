@@ -71,6 +71,9 @@ TextureImporter:
   - first:
       213: 7188930153578278880
     second: Sprites_17
+  - first:
+      213: -263089634459758618
+    second: Sprites_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1708,6 +1711,27 @@ TextureImporter:
       bones: []
       spriteID: 0efa027d2e534c360800000000000000
       internalID: 7188930153578278880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 79
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef40f11f51595cf0800000000000000
+      internalID: -263089634459758618
       vertices: []
       indices: 
       edges: []

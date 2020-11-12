@@ -39,6 +39,8 @@ public class Hugger : MonoBehaviour
     private GameObject loveParticles;
     public GameObject headPoint; 
 
+    public GameObject walkingEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,7 @@ public class Hugger : MonoBehaviour
         walkingTowardsPoint = false;
 
         huggingBody.SetActive(false);
+        walkingEffect.SetActive(false);
 
         anim = GetComponent<Animator>();
         // lastTimeHuggingDecission = Time.time;
@@ -115,6 +118,20 @@ public class Hugger : MonoBehaviour
       hats[index].SetActive(true);
     }
 
+    void CheckLookDirection(Vector3 targetPoint){
+      if(transform.position.x > targetPoint.x){
+        if(transform.localScale.x == 1) {
+          print("Pivonting Left");
+          transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        }
+      } else {
+        if(transform.localScale.x == -1) {
+          print("Pivonting Right");
+          transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
+      }
+    }
+
     void WalkTowardsRandomPoint(){
       idle = false;
       wantsToHug = false;
@@ -127,15 +144,16 @@ public class Hugger : MonoBehaviour
 
       anim.SetBool("Walking", true);
       anim.SetBool("Hugging", false);
+      walkingEffect.SetActive(true);
 
       Vector2 randomDirection = Random.insideUnitCircle.normalized;
       float distance = Random.Range(0, walkingPointDistance);
       walkingPoint = new Vector3(transform.position.x + (randomDirection.x * distance), transform.position.y, transform.position.z + (randomDirection.y * distance));
 
-      print("transform.position: " + transform.position);
-      print("randomDirection: " + randomDirection);
-      print("distance: " + distance);
-      print("Walking Point: " + walkingPoint);
+      // print("transform.position: " + transform.position);
+      // print("randomDirection: " + randomDirection);
+      // print("distance: " + distance);
+      // print("Walking Point: " + walkingPoint);
     }
 
     void Idle(){
@@ -150,6 +168,7 @@ public class Hugger : MonoBehaviour
 
       anim.SetBool("Walking", false);
       anim.SetBool("Hugging", false);
+      walkingEffect.SetActive(false);
     }
 
     void StopHugging(){
@@ -187,10 +206,13 @@ public class Hugger : MonoBehaviour
 
       anim.SetBool("Walking", false);
       anim.SetBool("Hugging", true);
+      walkingEffect.SetActive(false);
     }
 
     void WalkTowardsHuggingPoint(){
       transform.position = Vector3.MoveTowards(transform.position, huggingPoint.transform.position, speed * speedModifierWhenWantingToHug * Time.deltaTime);
+
+      CheckLookDirection(huggingPoint.transform.position);
 
       if(transform.position == huggingPoint.transform.position){
         StartHugging();
@@ -199,6 +221,8 @@ public class Hugger : MonoBehaviour
 
     void WalkTowardsPoint(){
       transform.position = Vector3.MoveTowards(transform.position, walkingPoint, speed * Time.deltaTime);
+
+      CheckLookDirection(walkingPoint);
 
       if(transform.position == walkingPoint){
         Idle();
@@ -230,6 +254,8 @@ public class Hugger : MonoBehaviour
       huggingPoint = _huggingPoint;
 
       anim.SetBool("Walking", true);
+      walkingEffect.SetActive(false);
+      walkingEffect.SetActive(true);
 
       // Love Particles
       Vector3 position = headPoint.transform.position;
