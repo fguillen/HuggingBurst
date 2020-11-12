@@ -6,11 +6,12 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public Rigidbody rb;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-
+      anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,5 +31,11 @@ public class Player : MonoBehaviour
           0,
           speed * verticalMove
         );
+
+      if(rb.velocity != Vector3.zero){
+        anim.SetBool("Walking", true);
+      } else {
+        anim.SetBool("Walking", false);
+      }
     }
 }
