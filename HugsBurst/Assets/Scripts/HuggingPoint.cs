@@ -40,7 +40,7 @@ public class HuggingPoint : MonoBehaviour
         Hugger huggerScript = hugger.GetComponent<Hugger>();
 
         if(huggerScript.IsIdle()) { // only if is idle now
-          var random = Random.Range(0, 100 - radarPower);
+          var random = Random.Range(0, 1000 - radarPower);
           if(random == 0) {
             selectedHugger = huggerScript;
             break;

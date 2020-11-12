@@ -1038,7 +1038,8 @@ MonoBehaviour:
   - {fileID: 1961963972}
   - {fileID: 4677559475734055625}
   speed: 1
-  speedNoise: 0.1
+  speedNoise: 1
+  speedModifierWhenWantingToHug: 1.2
   idleBody: {fileID: 4078643403488100561}
   huggingBody: {fileID: 3554210436105725141}
   secondsHugging: 5

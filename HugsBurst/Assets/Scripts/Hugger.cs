@@ -17,6 +17,8 @@ public class Hugger : MonoBehaviour
     // public float lastTimeHuggingDecission;
     public float speed;
     public float speedNoise;
+    public float speedModifierWhenWantingToHug;
+
     GameObject player;
 
     GameObject huggingPoint;
@@ -51,7 +53,7 @@ public class Hugger : MonoBehaviour
         anim = GetComponent<Animator>();
         // lastTimeHuggingDecission = Time.time;
         // player = GameObject.Find("Player");
-        speed = speed + Random.Range(-speedNoise, speedNoise);
+        speed = speed + Random.Range(0, speedNoise);
 
         SetRandomHat();
     }
@@ -188,7 +190,7 @@ public class Hugger : MonoBehaviour
     }
 
     void WalkTowardsHuggingPoint(){
-      transform.position = Vector3.MoveTowards(transform.position, huggingPoint.transform.position, speed * Time.deltaTime);
+      transform.position = Vector3.MoveTowards(transform.position, huggingPoint.transform.position, speed * speedModifierWhenWantingToHug * Time.deltaTime);
 
       if(transform.position == huggingPoint.transform.position){
         StartHugging();
