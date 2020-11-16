@@ -74,6 +74,18 @@ TextureImporter:
   - first:
       213: -263089634459758618
     second: Sprites_18
+  - first:
+      213: 3455609540856221501
+    second: Building_01
+  - first:
+      213: -8877105270654902643
+    second: Building_02
+  - first:
+      213: -1059341289296395630
+    second: Building_03
+  - first:
+      213: 8097644648361003729
+    second: Ground
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +115,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -1724,7 +1736,7 @@ TextureImporter:
         width: 77
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1732,6 +1744,90 @@ TextureImporter:
       bones: []
       spriteID: 6ef40f11f51595cf0800000000000000
       internalID: -263089634459758618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building_01
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 63
+        width: 313
+        height: 493
+      alignment: 9
+      pivot: {x: 0.5, y: 0.37624693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f8f2d919ac4ff20800000000000000
+      internalID: 3455609540856221501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building_02
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 78
+        width: 172
+        height: 397
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8edddc0acf2ec480800000000000000
+      internalID: -8877105270654902643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building_03
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 84
+        width: 431
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2928593c5b67c41f0800000000000000
+      internalID: -1059341289296395630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 4
+        width: 370
+        height: 592
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da86ee87ec906070800000000000000
+      internalID: 8097644648361003729
       vertices: []
       indices: 
       edges: []
