@@ -36,6 +36,11 @@ public class LevelManager : MonoBehaviour
       huggers.Add(hugger);
     }
 
+    public void DestroyHugger(GameObject hugger) {
+      huggers.Remove(hugger);
+      Destroy(hugger);
+    }
+
     public void SetActiveGround(GroundController groundController){
       activeGround = groundController;
     }
