@@ -5,37 +5,28 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject huggerTemplate;
-    public int numOfHuggers;
-    public Transform limitNorth;
-    public Transform limitSouth;
-    public Transform limitEast;
-    public Transform limitWest;
+    public float secondsBetweenHuggerCreation;
+    float lastHuggerCreatedAt;
+    public List<GameObject> huggersNests;
 
     // Start is called before the first frame update
     void Start()
     {
-      CreateHuggers();
+      lastHuggerCreatedAt = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    void CreateHuggers()
-    {
-      for(int i = 0; i < numOfHuggers; i++)
-      {
+      if((Time.time - lastHuggerCreatedAt) > secondsBetweenHuggerCreation) {
         CreateHugger();
       }
     }
 
     void CreateHugger()
     {
-      var x = Random.Range(limitWest.position.x, limitEast.position.x);
-      var z = Random.Range(limitNorth.position.z, limitSouth.position.z);
-
-      Instantiate(huggerTemplate, new Vector3(x, 2, z), huggerTemplate.transform.rotation);
+      lastHuggerCreatedAt = Time.time;
+      int randomIndex = Random.Range(0, huggersNests.Count);
+      Instantiate(huggerTemplate, huggersNests[randomIndex].transform.position, huggersNests[randomIndex].transform.rotation);
     }
 }
