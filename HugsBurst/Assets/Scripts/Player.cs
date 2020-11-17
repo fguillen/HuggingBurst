@@ -9,10 +9,13 @@ public class Player : MonoBehaviour
     Animator anim;
     public List<HuggingPoint> huggingPoints;
 
+    bool walking;
+
     // Start is called before the first frame update
     void Start()
     {
       anim = GetComponent<Animator>();
+      walking = false;
     }
 
     // Update is called once per frame
@@ -34,10 +37,17 @@ public class Player : MonoBehaviour
         );
 
       if(rb.velocity != Vector3.zero){
-        anim.SetBool("Walking", true);
-        SeparateFromHuggers();
+        if(!walking) {
+          walking = true;
+          anim.SetBool("Walking", true);
+          Invoke("SeparateFromHuggers", 0.3f);
+        }
+        
       } else {
-        anim.SetBool("Walking", false);
+        if(walking) {
+          walking = false;
+          anim.SetBool("Walking", false);
+        }
       }
     }
 
