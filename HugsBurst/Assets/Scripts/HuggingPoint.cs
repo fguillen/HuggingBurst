@@ -24,7 +24,6 @@ public class HuggingPoint : MonoBehaviour
       {
         Hugger availableHugger = FindAvailableHugger();
         if(availableHugger){
-          print("Available Hugger found");
           hugger = availableHugger;
           hugger.WantsToHug(this.gameObject);
           taken = true;

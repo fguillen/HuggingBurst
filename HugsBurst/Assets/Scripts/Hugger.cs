@@ -122,14 +122,12 @@ public class Hugger : MonoBehaviour
     void CheckLookDirection(Vector3 targetPoint){
       if(transform.position.x > targetPoint.x){
         if(transform.localScale.x == 1) {
-          print("Pivonting Left");
           transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
           var shape = walkingEffect.shape;
           shape.rotation = new Vector3(shape.rotation.x, 90, shape.rotation.z);
         }
       } else {
         if(transform.localScale.x == -1) {
-          print("Pivonting Right");
           transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
           var shape = walkingEffect.shape;
           shape.rotation = new Vector3(shape.rotation.x, -90, shape.rotation.z);
