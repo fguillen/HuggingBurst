@@ -1006,11 +1006,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2
   m_Drag: 10
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1321629051
 MonoBehaviour:
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   hugStartedAt: 0
   secondsBetweenHugs: 10
   lastHugFinishedAt: 0
-  walkingPointDistance: 5
+  walkingPointDistance: 20
   walkingPoint: {x: 0, y: 0, z: 0}
   loveParticlesPrefab: {fileID: 8355386262209284045, guid: 320d75979bd104bd6972d38a79930863,
     type: 3}
