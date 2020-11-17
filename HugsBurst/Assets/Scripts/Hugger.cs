@@ -174,7 +174,7 @@ public class Hugger : MonoBehaviour
       anim.SetBool("Hugging", false);
     }
 
-    void StopHugging(){
+    public void StopHugging(){
       lastHugFinishedAt = Time.time;
 
       huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
@@ -266,6 +266,10 @@ public class Hugger : MonoBehaviour
 
     public bool IsAvailableForHug(){
       return idle || walkingTowardsPoint;
+    }
+
+    public bool IsHugging() {
+      return hugging;
     }
 
     void OnDrawGizmos(){

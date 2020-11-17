@@ -5,7 +5,7 @@ using UnityEngine;
 public class HuggingPoint : MonoBehaviour
 {
     bool taken;
-    Hugger hugger;
+    public Hugger hugger;
 
     public float attractionDistance;
     public LayerMask huggersLayer;
@@ -48,6 +48,12 @@ public class HuggingPoint : MonoBehaviour
       }
 
       return selectedHugger;
+    }
+
+    public void LiberateHugger() {
+      if(hugger != null && hugger.IsHugging()) {
+        hugger.StopHugging();
+      }
     }
 
     public void LiberateHuggingPoint(){

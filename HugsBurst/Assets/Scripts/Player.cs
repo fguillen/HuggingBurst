@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Rigidbody rb;
     Animator anim;
+    public List<HuggingPoint> huggingPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,16 @@ public class Player : MonoBehaviour
 
       if(rb.velocity != Vector3.zero){
         anim.SetBool("Walking", true);
+        SeparateFromHuggers();
       } else {
         anim.SetBool("Walking", false);
+      }
+    }
+
+    void SeparateFromHuggers() {
+      foreach (HuggingPoint huggingPoint in huggingPoints)
+      {
+          huggingPoint.LiberateHugger();
       }
     }
 }
