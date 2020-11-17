@@ -16,12 +16,20 @@ public class GroundController : MonoBehaviour
             groundEast = Instantiate(groundTemplate, groundAnchorEast.position, groundTemplate.transform.rotation);
             groundEast.GetComponent<GroundController>().groundWest = this.gameObject;
         }
+
+        if(groundWest != null) {
+            Destroy(groundWest);
+        }
     }
     public void CreateGroundWest(){
         if(groundWest == null){
             print("CreateGroundWest");
             groundWest = Instantiate(groundTemplate, groundAnchorWest.position, groundTemplate.transform.rotation);
             groundWest.GetComponent<GroundController>().groundEast = this.gameObject;
+        }
+
+        if(groundEast != null) {
+            Destroy(groundEast);
         }
     }
 }
