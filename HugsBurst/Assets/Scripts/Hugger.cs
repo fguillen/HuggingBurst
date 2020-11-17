@@ -264,6 +264,10 @@ public class Hugger : MonoBehaviour
       return idle;
     }
 
+    public bool IsAvailableForHug(){
+      return idle || walkingTowardsPoint;
+    }
+
     void OnDrawGizmos(){
       // RemainingTimeHugging
       Gizmos.color = new Color(1, 0, 0, 0.5f);

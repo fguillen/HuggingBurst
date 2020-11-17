@@ -38,7 +38,7 @@ public class HuggingPoint : MonoBehaviour
       foreach(var hugger in nearHuggers){
         Hugger huggerScript = hugger.GetComponent<Hugger>();
 
-        if(huggerScript.IsIdle()) { // only if is idle now
+        if(huggerScript.IsAvailableForHug()) { // only if is idle now
           var random = Random.Range(0, 1000 - radarPower);
           if(random == 0) {
             selectedHugger = huggerScript;
