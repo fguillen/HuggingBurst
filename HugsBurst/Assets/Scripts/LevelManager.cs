@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public float secondsBetweenHuggerCreation;
     float lastHuggerCreatedAt;
     public List<GameObject> huggersNests;
+    GroundController activeGround;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,11 @@ public class LevelManager : MonoBehaviour
     void CreateHugger()
     {
       lastHuggerCreatedAt = Time.time;
-      int randomIndex = Random.Range(0, huggersNests.Count);
-      Instantiate(huggerTemplate, huggersNests[randomIndex].transform.position, huggersNests[randomIndex].transform.rotation);
+      int randomIndex = Random.Range(0, activeGround.huggersNests.Count);
+      Instantiate(huggerTemplate, activeGround.huggersNests[randomIndex].transform.position, activeGround.huggersNests[randomIndex].transform.rotation);
+    }
+
+    public void SetActiveGround(GroundController groundController){
+      activeGround = groundController;
     }
 }

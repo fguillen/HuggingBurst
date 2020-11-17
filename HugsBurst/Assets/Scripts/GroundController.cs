@@ -7,8 +7,10 @@ public class GroundController : MonoBehaviour
     public Transform groundAnchorEast;
     public Transform groundAnchorWest;
     public GameObject groundTemplate;
-    public GameObject groundEast;
-    public GameObject groundWest;
+    GameObject groundEast;
+    GameObject groundWest;
+    public LevelManager levelManager;
+    public List<GameObject> huggersNests;
 
     public void CreateGroundEast(){
         if(groundEast == null){
@@ -31,5 +33,9 @@ public class GroundController : MonoBehaviour
         if(groundEast != null) {
             Destroy(groundEast);
         }
+    }
+
+    public void SetActiveGround(){
+        levelManager.SetActiveGround(this);
     }
 }
