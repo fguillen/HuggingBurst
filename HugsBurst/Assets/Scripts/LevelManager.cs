@@ -7,20 +7,24 @@ public class LevelManager : MonoBehaviour
     public GameObject huggerTemplate;
     public float secondsBetweenHuggerCreation;
     float lastHuggerCreatedAt;
-    public List<GameObject> huggersNests;
     GroundController activeGround;
+    public float maxNumberOfHuggers;
+    List<GameObject> huggers;
 
     // Start is called before the first frame update
     void Start()
     {
       lastHuggerCreatedAt = Time.time;
+      huggers = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-      if((Time.time - lastHuggerCreatedAt) > secondsBetweenHuggerCreation) {
-        CreateHugger();
+      if(huggers.Count < maxNumberOfHuggers) {
+        if((Time.time - lastHuggerCreatedAt) > secondsBetweenHuggerCreation) {
+          CreateHugger();
+        }
       }
     }
 
@@ -28,7 +32,8 @@ public class LevelManager : MonoBehaviour
     {
       lastHuggerCreatedAt = Time.time;
       int randomIndex = Random.Range(0, activeGround.huggersNests.Count);
-      Instantiate(huggerTemplate, activeGround.huggersNests[randomIndex].transform.position, activeGround.huggersNests[randomIndex].transform.rotation);
+      GameObject hugger = Instantiate(huggerTemplate, activeGround.huggersNests[randomIndex].transform.position, activeGround.huggersNests[randomIndex].transform.rotation);
+      huggers.Add(hugger);
     }
 
     public void SetActiveGround(GroundController groundController){
