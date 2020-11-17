@@ -979,6 +979,7 @@ Transform:
   - {fileID: 1049910530314331369}
   - {fileID: 943205259}
   - {fileID: 2678592164577298011}
+  - {fileID: 8475541744553530557}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1049,9 +1050,8 @@ MonoBehaviour:
   lastHugFinishedAt: 0
   walkingPointDistance: 20
   walkingPoint: {x: 0, y: 0, z: 0}
-  loveParticlesPrefab: {fileID: 8355386262209284045, guid: 320d75979bd104bd6972d38a79930863,
-    type: 3}
   headPoint: {fileID: 943205258}
+  lovingEffect: {fileID: 8475541744553530558}
   walkingEffect: {fileID: 2678592164577298010}
 --- !u!95 &-646318821332526845
 Animator:
@@ -1516,7 +1516,7 @@ MonoBehaviour:
   - {fileID: 1072916973}
   m_Bounds:
     m_Center: {x: 0.0015602708, y: 0.10541105, z: 0}
-    m_Extent: {x: 0.8834402, y: 1.5911621, z: 0}
+    m_Extent: {x: 0.88344026, y: 1.591162, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &4570086893606833846
@@ -1982,6 +1982,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &462577490514301821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2260098688934121348}
+    m_Modifications:
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355386262209284045, guid: 320d75979bd104bd6972d38a79930863,
+        type: 3}
+      propertyPath: m_Name
+      value: LovingEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 320d75979bd104bd6972d38a79930863, type: 3}
+--- !u!4 &8475541744553530557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8355386262209284032, guid: 320d75979bd104bd6972d38a79930863,
+    type: 3}
+  m_PrefabInstance: {fileID: 462577490514301821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8475541744553530558 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8355386262209284035, guid: 320d75979bd104bd6972d38a79930863,
+    type: 3}
+  m_PrefabInstance: {fileID: 462577490514301821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7902226270560444133
 PrefabInstance:
   m_ObjectHideFlags: 0

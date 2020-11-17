@@ -35,10 +35,9 @@ public class Hugger : MonoBehaviour
     public float walkingPointDistance;
     public Vector3 walkingPoint;
 
-    public GameObject loveParticlesPrefab;
-    private GameObject loveParticles;
     public GameObject headPoint; 
 
+    public ParticleSystem lovingEffect;
     public ParticleSystem walkingEffect;
 
     // Start is called before the first frame update
@@ -52,7 +51,8 @@ public class Hugger : MonoBehaviour
 
         idleBody.SetActive(true);
         huggingBody.SetActive(false);
-        walkingEffectEmissionActive(false);
+        WalkingEffectEmissionActive(false);
+        LovingEffectEmissionActive(false);
 
         anim = GetComponent<Animator>();
         // lastTimeHuggingDecission = Time.time;
@@ -144,11 +144,10 @@ public class Hugger : MonoBehaviour
 
       idleBody.SetActive(true);
       huggingBody.SetActive(false);
-      walkingEffectEmissionActive(true);
+      WalkingEffectEmissionActive(true);
 
       anim.SetBool("Walking", true);
       anim.SetBool("Hugging", false);
-      walkingEffectEmissionActive(true);
 
       Vector2 randomDirection = Random.insideUnitCircle.normalized;
       float distance = Random.Range(0, walkingPointDistance);
@@ -169,7 +168,7 @@ public class Hugger : MonoBehaviour
 
       idleBody.SetActive(true);
       huggingBody.SetActive(false);
-      walkingEffectEmissionActive(false);
+      WalkingEffectEmissionActive(false);
 
       anim.SetBool("Walking", false);
       anim.SetBool("Hugging", false);
@@ -179,7 +178,7 @@ public class Hugger : MonoBehaviour
       lastHugFinishedAt = Time.time;
 
       huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
-      Destroy(loveParticles);
+      LovingEffectEmissionActive(false);
 
       WalkTowardsRandomPoint();
     }
@@ -194,8 +193,6 @@ public class Hugger : MonoBehaviour
 
     void StartHugging()
     {
-      print("StartHugging");
-
       hugStartedAt = Time.time;
 
       idle = false;
@@ -205,7 +202,7 @@ public class Hugger : MonoBehaviour
 
       idleBody.SetActive(false);
       huggingBody.SetActive(true);
-      walkingEffectEmissionActive(false);
+      WalkingEffectEmissionActive(false);
 
       transform.localScale = huggingPoint.transform.localScale; // flip the object if needed
 
@@ -259,12 +256,8 @@ public class Hugger : MonoBehaviour
 
       anim.SetBool("Walking", true);
       anim.SetBool("Hugging", false);
-      walkingEffectEmissionActive(true);
-
-      // Love Particles
-      Vector3 position = headPoint.transform.position;
-      position.y = position.y + 0.1f;
-      loveParticles = Instantiate(loveParticlesPrefab, position, Quaternion.identity, headPoint.transform);
+      WalkingEffectEmissionActive(true);
+      LovingEffectEmissionActive(true);
     }
 
     public bool IsIdle(){
@@ -292,8 +285,13 @@ public class Hugger : MonoBehaviour
       }
     }
 
-    void walkingEffectEmissionActive(bool active){
+    void WalkingEffectEmissionActive(bool active){
       var emission = walkingEffect.emission;
+      emission.enabled = active;
+    }
+
+    void LovingEffectEmissionActive(bool active){
+      var emission = lovingEffect.emission;
       emission.enabled = active;
     }
 }
