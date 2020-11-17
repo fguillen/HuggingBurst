@@ -135,7 +135,7 @@ public class Hugger : MonoBehaviour
       }
     }
 
-    void WalkTowardsRandomPoint(){
+    public void WalkTowardsRandomPoint(){
       idle = false;
       wantsToHug = false;
       hugging = false;
