@@ -10,12 +10,16 @@ public class LevelManager : MonoBehaviour
     GroundController activeGround;
     public float maxNumberOfHuggers;
     List<GameObject> huggers;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
       lastHuggerCreatedAt = Time.time;
       huggers = new List<GameObject>();
+      audioManager = FindObjectOfType<AudioManager>();
+
+      audioManager.Play("Theme");
     }
 
     // Update is called once per frame

@@ -198,7 +198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85285777
 GameObject:
@@ -260,7 +260,7 @@ Transform:
   m_LocalScale: {x: 2000, y: 5.38, z: 21.201736}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &100458549
 BoxCollider:
@@ -436,8 +436,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265007888}
+  - component: {fileID: 265007889}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,8 +456,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &265007889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265007887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9532bfe00502240548ab40bc9bbf80ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 2a4acd13732f14065b8486a56fb842cf, type: 3}
+    volume: 0.576
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &274588027
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 122.207, y: -0.4329834, z: 180}
 --- !u!1 &865312237
 GameObject:
@@ -991,7 +1011,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   m_Layer: 0
@@ -1001,14 +1020,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -1064,7 +1075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 142.67, y: 0, z: 180}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1460,7 +1471,7 @@ Transform:
   - {fileID: 1694829077}
   - {fileID: 1992509746}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1348888011
 MonoBehaviour:
@@ -2037,7 +2048,7 @@ Transform:
   m_Children:
   - {fileID: 2087589650}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 142.672, y: 0, z: 180}
 --- !u!114 &1548949520
 MonoBehaviour:
@@ -2404,7 +2415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078859829
 GameObject:
@@ -2843,7 +2854,7 @@ Transform:
   - {fileID: 9175451043458013438}
   - {fileID: 1875629703}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6276037156268381433
 GameObject:
@@ -2874,6 +2885,7 @@ GameObject:
   - component: {fileID: 6451233823364098364}
   - component: {fileID: 6451233823364098362}
   - component: {fileID: 6451233823364098365}
+  - component: {fileID: 6451233823364098366}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2945,6 +2957,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &6451233823364098366
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451233823364098361}
+  m_Enabled: 1
 --- !u!4 &6771813699162329023
 Transform:
   m_ObjectHideFlags: 0
