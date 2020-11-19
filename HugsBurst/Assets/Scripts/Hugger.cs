@@ -41,6 +41,7 @@ public class Hugger : MonoBehaviour
     public ParticleSystem walkingEffect;
 
     public AudioSource footstepsAudioSource;
+    public AudioSource huggingAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -186,6 +187,8 @@ public class Hugger : MonoBehaviour
       huggingPoint.GetComponent<HuggingPoint>().LiberateHuggingPoint();
       LovingEffectEmissionActive(false);
 
+      huggingAudioSource.Stop();
+
       WalkTowardsRandomPoint();
     }
 
@@ -211,6 +214,7 @@ public class Hugger : MonoBehaviour
       WalkingEffectEmissionActive(false);
 
       footstepsAudioSource.Stop();
+      huggingAudioSource.Play();
 
       transform.localScale = huggingPoint.transform.localScale; // flip the object if needed
 
