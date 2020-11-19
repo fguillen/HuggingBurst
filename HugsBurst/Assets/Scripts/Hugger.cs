@@ -43,6 +43,9 @@ public class Hugger : MonoBehaviour
     public AudioSource footstepsAudioSource;
     public AudioSource huggingAudioSource;
 
+    [HideInInspector]
+    public GameCanvasManager gameCanvasManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,8 @@ public class Hugger : MonoBehaviour
         // lastTimeHuggingDecission = Time.time;
         // player = GameObject.Find("Player");
         speed = speed + Random.Range(0, speedNoise);
+
+        gameCanvasManager = FindObjectOfType<GameCanvasManager>();
 
         SetRandomHat();
     }
@@ -220,6 +225,8 @@ public class Hugger : MonoBehaviour
 
       anim.SetBool("Walking", false);
       anim.SetBool("Hugging", true);
+
+      gameCanvasManager.ShowHugText();
     }
 
     void WalkTowardsHuggingPoint(){
