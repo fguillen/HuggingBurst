@@ -40,6 +40,8 @@ public class Hugger : MonoBehaviour
     public ParticleSystem lovingEffect;
     public ParticleSystem walkingEffect;
 
+    public AudioSource footstepsAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -146,6 +148,8 @@ public class Hugger : MonoBehaviour
       huggingBody.SetActive(false);
       WalkingEffectEmissionActive(true);
 
+      footstepsAudioSource.Play();
+
       anim.SetBool("Walking", true);
       anim.SetBool("Hugging", false);
 
@@ -169,6 +173,8 @@ public class Hugger : MonoBehaviour
       idleBody.SetActive(true);
       huggingBody.SetActive(false);
       WalkingEffectEmissionActive(false);
+
+      footstepsAudioSource.Stop();
 
       anim.SetBool("Walking", false);
       anim.SetBool("Hugging", false);
@@ -203,6 +209,8 @@ public class Hugger : MonoBehaviour
       idleBody.SetActive(false);
       huggingBody.SetActive(true);
       WalkingEffectEmissionActive(false);
+
+      footstepsAudioSource.Stop();
 
       transform.localScale = huggingPoint.transform.localScale; // flip the object if needed
 
@@ -258,6 +266,8 @@ public class Hugger : MonoBehaviour
       anim.SetBool("Hugging", false);
       WalkingEffectEmissionActive(true);
       LovingEffectEmissionActive(true);
+
+      footstepsAudioSource.Play();
     }
 
     public bool IsIdle(){

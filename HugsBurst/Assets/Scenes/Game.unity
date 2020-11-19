@@ -185,7 +185,7 @@ MonoBehaviour:
   huggerTemplate: {fileID: 787912531035816559, guid: a63a07119501f435983717644db7d2f1,
     type: 3}
   secondsBetweenHuggerCreation: 0.5
-  maxNumberOfHuggers: 100
+  maxNumberOfHuggers: 50
 --- !u!4 &31887676
 Transform:
   m_ObjectHideFlags: 0
@@ -473,9 +473,15 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 2a4acd13732f14065b8486a56fb842cf, type: 3}
-    volume: 0.576
+    volume: 0.15
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: 37459cc35311a4877abe9f9c60133ef4, type: 3}
+    volume: 0.576
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1 &274588027
 GameObject:
