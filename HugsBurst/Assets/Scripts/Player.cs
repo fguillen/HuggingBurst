@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     bool walking;
 
+    [SerializeField] GameCanvasManager gameCanvasManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
           walking = true;
           anim.SetBool("Walking", true);
           Invoke("SeparateFromHuggers", 0.3f);
+          HideUserCursorsText();
         }
         
       } else {
@@ -56,5 +59,9 @@ public class Player : MonoBehaviour
       {
           huggingPoint.LiberateHugger();
       }
+    }
+
+    void HideUserCursorsText() {
+      gameCanvasManager.HideUseCursorsText();
     }
 }
