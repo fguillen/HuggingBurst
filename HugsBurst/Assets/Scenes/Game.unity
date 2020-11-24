@@ -1623,7 +1623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb9a92706a044fd98e844ce7c408f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &1209651386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3762,6 +3761,36 @@ PrefabInstance:
     - target: {fileID: 7214740889301030194, guid: 38a0d938e69fd4448bb874e688d65531,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
+        type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: DoubleHug
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
+        type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 194012011f79046c2b298aeff0e79823, type: 3}
+    - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
+        type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
+        type: 3}
+      propertyPath: sounds.Array.data[1].loop
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

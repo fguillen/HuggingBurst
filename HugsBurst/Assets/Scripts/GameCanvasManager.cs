@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameCanvasManager : MonoBehaviour
 {
-    public Animator animator;
+    Animator animator;
+    AudioManager audioManager;
+
 
     void Start () {
         animator = gameObject.GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     public void ShowHugText(){
         animator.SetTrigger("ShowHugText");
@@ -15,5 +18,6 @@ public class GameCanvasManager : MonoBehaviour
 
     public void ShowDoubleHugText(){
         animator.SetTrigger("ShowDoubleHugText");
+        audioManager.Play("DoubleHug");
     }
 }
