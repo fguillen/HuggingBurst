@@ -1133,7 +1133,7 @@ Camera:
   far clip plane: 1000
   field of view: 39.4
   orthographic: 1
-  orthographic size: 11.1
+  orthographic size: 11
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -1623,6 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb9a92706a044fd98e844ce7c408f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virtualCameraController: {fileID: 1548949521}
 --- !u!1 &1209651386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,8 +2288,10 @@ GameObject:
   - component: {fileID: 1548949519}
   - component: {fileID: 1548949518}
   - component: {fileID: 1548949520}
+  - component: {fileID: 1548949521}
+  - component: {fileID: 1548949522}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: VirtualCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2316,7 +2319,7 @@ MonoBehaviour:
   m_Follow: {fileID: 5491334313546654930}
   m_Lens:
     FieldOfView: 39.4
-    OrthographicSize: 11.1
+    OrthographicSize: 11
     NearClipPlane: 1
     FarClipPlane: 1000
     Dutch: 0
@@ -2361,6 +2364,37 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 0
   m_Damping: 0
+--- !u!114 &1548949521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548949517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3535a3882fd534178b2eeda7d61e4326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1548949522
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548949517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 366809814ca7649789c10b77cb9e658e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1567922299
 GameObject:
   m_ObjectHideFlags: 0

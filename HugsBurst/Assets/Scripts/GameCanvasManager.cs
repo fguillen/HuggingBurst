@@ -7,6 +7,7 @@ public class GameCanvasManager : MonoBehaviour
     Animator animator;
     AudioManager audioManager;
 
+    [SerializeField] VirtualCameraController virtualCameraController;
 
     void Start () {
         animator = gameObject.GetComponent<Animator>();
@@ -14,10 +15,12 @@ public class GameCanvasManager : MonoBehaviour
     }
     public void ShowHugText(){
         animator.SetTrigger("ShowHugText");
+        virtualCameraController.Zoom();
     }
 
     public void ShowDoubleHugText(){
         animator.SetTrigger("ShowDoubleHugText");
         audioManager.Play("DoubleHug");
+        virtualCameraController.DoubleZoom();
     }
 }
