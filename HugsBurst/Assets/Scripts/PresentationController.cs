@@ -7,6 +7,8 @@ public class PresentationController : MonoBehaviour
 {
     private AudioManager audioManager;
 
+    [SerializeField] GameObject creditsPage;
+
     void Start() {
         audioManager = FindObjectOfType<AudioManager>();
     }
@@ -19,7 +21,10 @@ public class PresentationController : MonoBehaviour
     }
 
     public void StartMusic() {
-        print("StartMusic");
         audioManager.Play("Theme");
+    }
+
+    public void ShowCredits() {
+        creditsPage.SetActive(true);
     }
 }
