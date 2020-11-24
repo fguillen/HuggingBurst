@@ -19,7 +19,7 @@ public class Hugger : MonoBehaviour
     public float speedNoise;
     public float speedModifierWhenWantingToHug;
 
-    GameObject player;
+    Player player;
 
     GameObject huggingPoint;
 
@@ -62,7 +62,7 @@ public class Hugger : MonoBehaviour
 
         anim = GetComponent<Animator>();
         // lastTimeHuggingDecission = Time.time;
-        // player = GameObject.Find("Player");
+        player = GameObject.Find("Player").GetComponent<Player> ();
         speed = speed + Random.Range(0, speedNoise);
 
         gameCanvasManager = FindObjectOfType<GameCanvasManager>();
@@ -226,7 +226,20 @@ public class Hugger : MonoBehaviour
       anim.SetBool("Walking", false);
       anim.SetBool("Hugging", true);
 
-      gameCanvasManager.ShowHugText();
+      CheckIfSimpleOrDoubleHug();
+    }
+
+    void CheckIfSimpleOrDoubleHug()
+    {
+      HuggingPoint otherHuggingPoint = player.huggingPoints.Find(hp => hp.hugger != this);
+
+      if(otherHuggingPoint.hugger != null && otherHuggingPoint.hugger.IsHugging())
+      {
+        gameCanvasManager.ShowDoubleHugText();
+      } else
+      {
+        gameCanvasManager.ShowHugText();
+      }
     }
 
     void WalkTowardsHuggingPoint(){

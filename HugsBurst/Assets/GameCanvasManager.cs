@@ -12,4 +12,8 @@ public class GameCanvasManager : MonoBehaviour
     public void ShowHugText(){
         animator.SetTrigger("ShowHugText");
     }
+
+    public void ShowDoubleHugText(){
+        animator.SetTrigger("ShowDoubleHugText");
+    }
 }
