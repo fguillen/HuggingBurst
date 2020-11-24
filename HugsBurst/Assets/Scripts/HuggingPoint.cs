@@ -61,10 +61,10 @@ public class HuggingPoint : MonoBehaviour
       hugger = null;
     }
 
-    // void OnDrawGizmos()
-    // {
-    //   // print("Drawing Gizmos: " + transform.position + " -- " + attractionDistance);
-    //   Gizmos.color = Color.yellow;
-    //   Gizmos.DrawSphere(transform.position, attractionDistance);
-    // }
+    void OnDrawGizmos()
+    {
+      // print("Drawing Gizmos: " + transform.position + " -- " + attractionDistance);
+      Gizmos.color = Color.yellow;
+      Gizmos.DrawWireSphere(transform.position, attractionDistance);
+    }
 }

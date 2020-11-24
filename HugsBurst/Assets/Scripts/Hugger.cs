@@ -250,6 +250,11 @@ public class Hugger : MonoBehaviour
       if(transform.position == huggingPoint.transform.position){
         StartHugging();
       }
+
+      // if Hugger is too far from Player we forget Player
+      if(Vector3.Distance(transform.position, huggingPoint.transform.position) > huggingPoint.GetComponent<HuggingPoint>().attractionDistance) {
+        StopHugging();
+      }
     }
 
     void WalkTowardsPoint(){

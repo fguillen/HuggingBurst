@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69660763a57d94ed4b9484af1fe9b182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractionDistance: 8
+  hugger: {fileID: 0}
+  attractionDistance: 12
   huggersLayer:
     serializedVersion: 2
     m_Bits: 512
-  radarPower: 0
+  radarPower: 700

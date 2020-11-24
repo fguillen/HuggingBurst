@@ -3781,7 +3781,7 @@ PrefabInstance:
     - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
         type: 3}
       propertyPath: sounds.Array.data[1].volume
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7214740889301030195, guid: 38a0d938e69fd4448bb874e688d65531,
         type: 3}
@@ -3964,11 +3964,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HuggingPointEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044465941172217600, guid: 21c233f6145364e59a4d19fa0ac7cddd,
-        type: 3}
-      propertyPath: radarPower
-      value: 700
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c233f6145364e59a4d19fa0ac7cddd, type: 3}
